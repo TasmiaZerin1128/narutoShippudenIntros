@@ -22,22 +22,21 @@ export class HomeComponent implements OnInit {
   anyClicked = false;
 
   // source = "https://37.media.tumblr.com/tumblr_lljb0lJB2M1qktfddo1_r1_500.gif";
-  // source = "https://i.pinimg.com/originals/39/f8/78/39f8782827f373d6516d305f290d0c58.gif";
   source = "https://i.pinimg.com/originals/39/f8/78/39f8782827f373d6516d305f290d0c58.gif";
   returnSource: any;
 
   ngOnInit(): void {
 
     this.timeLine = new Date();
-    this.audio1.src = './assets/audio/intro1.mp3';
-    this.audio2.src = './assets/audio/intro2.mp3';
-    this.audio3.src = './assets/audio/intro3.mp3';
-    this.audio4.src = './assets/audio/intro4.mp3';
+    this.audio1.src = "./assets/audio/introTrack.mp3";
+    this.audio1.load();
+    this.audio1.play();
   }
   
 
   printOne(){
-    this.anyClicked = true;
+        this.anyClicked = true;
+        this.audio1.pause();
         this.source = "./assets/images/Opening6.mp4"
         console.log(this.source);
         const player = this.elRef.nativeElement.querySelector('video');
@@ -50,6 +49,7 @@ export class HomeComponent implements OnInit {
     console.log(this.source);
     const player = this.elRef.nativeElement.querySelector('video');
     player.load();
+    this.audio1.pause();
   }
 
   printThree(){
@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
     console.log(this.source);
     const player = this.elRef.nativeElement.querySelector('video');
     player.load();
+    this.audio1.pause();
   }
 
   printFour(){
@@ -66,6 +67,7 @@ export class HomeComponent implements OnInit {
     console.log(this.source);
     const player = this.elRef.nativeElement.querySelector('video');
     player.load();
+    this.audio1.pause();
   }
 
 }
